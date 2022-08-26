@@ -1,7 +1,7 @@
-import string
 from typing import Optional
 from fastapi import FastAPI
-from typing import Optional
+from pydantic import BaseModel
+import uvicorn
 
 app = FastAPI()
 
@@ -28,3 +28,17 @@ def blog(id: int):
 @app.get('/blog/{id}/comments')
 def comments(id: int):
     return {f"comments №{id}:":'test'}
+
+class Blog(BaseModel):
+    title: str
+    text: str
+    author: str
+    tegs: Optional[str] = None
+    
+
+@app.post('/blog')
+def create_blog(request: Blog):
+    return {'Title':request.title, 'text':request.text, 'author':request.author}
+
+#if __name__=='__main__':
+#    uvicorn.run(app,host='127.0.0.1',port=9000)
