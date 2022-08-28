@@ -6,6 +6,8 @@ class BlogBase(BaseModel):
     body: str
 
 class Blog(BlogBase):
+    title: str
+    body: str
     class Config():
         orm_mode = True
     
@@ -27,6 +29,6 @@ class ShowUser(BaseModel):
 class ShowBlog(Blog):
     title: str
     body: str
-    author: ShowUser
+    user_id: int
     class Config():
         orm_mode = True
