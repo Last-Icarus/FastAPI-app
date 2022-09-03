@@ -2,8 +2,8 @@ from http.client import HTTPException
 from lib2to3.pgen2 import token
 from fastapi import APIRouter,Depends, status, HTTPException
 from sqlalchemy.orm import Session
-from blog import database, models,token
-from blog.repository.user import Hash
+from .. import database, models,token
+from ..repository.user import Hash
 from fastapi.security import OAuth2PasswordRequestForm 
 
 

@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
-from blog import models, schemas
+from .. import models, schemas
 from fastapi import Depends, HTTPException, status
-from blog.database import get_db
+from ..database import get_db
 
 
 

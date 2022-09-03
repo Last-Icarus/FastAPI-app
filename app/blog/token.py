@@ -1,4 +1,3 @@
-import blog.schemas
 from datetime import datetime, timedelta
 
 from fastapi import HTTPException, status
